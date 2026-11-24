@@ -1,3 +1,4 @@
+
 package com.researchlab.security;
 
 import org.springframework.context.annotation.Bean;
@@ -57,10 +58,12 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOrigins(List.of(
-        	    "http://localhost:5173",
-        	    "http://localhost:5175",
-        	     "http://localhost:5177"
-        	));
+            "http://localhost:5173",
+            "http://localhost:5175",
+            "http://localhost:5177",
+            "https://devikala.netlify.app"
+        ));
+
         configuration.setAllowedMethods(List.of(
             "GET",
             "POST",
@@ -70,7 +73,6 @@ public class SecurityConfig {
         ));
 
         configuration.setAllowedHeaders(List.of("*"));
-
         configuration.setAllowCredentials(true);
 
         UrlBasedCorsConfigurationSource source =
